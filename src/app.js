@@ -11,10 +11,10 @@ import './styles/styles.scss';
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: 'Water Bill', amount: 400 }));
-store.dispatch(addExpense({ description: 'Gas Bill', createdAt: 10000 }));
-store.dispatch(addExpense({ description: 'Rent', amount: 109500 }));
-store.dispatch(addExpense({ description: 'Phone', amount: 10500, createdAt: 20000 }));
+// store.dispatch(addExpense({ description: 'Water Bill', amount: 400 }));
+// store.dispatch(addExpense({ description: 'Gas Bill', createdAt: 10000 }));
+// store.dispatch(addExpense({ description: 'Rent', amount: 109500 }));
+// store.dispatch(addExpense({ description: 'Phone', amount: 10500, createdAt: 20000 }));
 
 const jsx = (
   <Provider store={store}>
