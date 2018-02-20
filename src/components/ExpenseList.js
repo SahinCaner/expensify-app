@@ -2,25 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseListItem from './ExpenseListItem';
 import selectedExpenses from '../selectors/expenses';
+import selectExpensesTotal from '../selectors/expenses-total';
 
 export const ExpenseList = (props) => (
   <div>
     <ul>
       {
-        props.expenses.length === 0 ? (
-          <p>No expense</p>
-        ) : (
-            props.expenses.map((expense) => (
-              <ExpenseListItem
-                // key={expense.id}
-                // description={expense.description}
-                // amount={expense.amount}
-                // createdAt={expense.createdAt}
-                key={expense.id}
-                {...expense} // sends all expense props to child component
-              />
-            ))
-          )
+        props.expenses.map((expense) => (
+          <ExpenseListItem
+            key={expense.id}
+            {...expense} // sends all expense props to child component
+          />
+        ))
       }
     </ul>
   </div>

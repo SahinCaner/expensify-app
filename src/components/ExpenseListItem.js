@@ -11,19 +11,4 @@ const ExpenseListItem = ({ description, amount, createdAt, id }) => (
   </li>
 );
 
-// const ExpenseListItem = (props) => (
-//   <li>
-//     <p> Description: {props.description}</p>
-//     <p> Amount: {props.amount}</p>
-//     <p> Created At: {props.createdAt}</p>
-//     <button 
-//       onClick={() => {
-//         console.log(props.id);
-//         props.dispatch(removeExpense({ id: props.id }));
-//       }}
-//     >
-//       Remove</button>
-//   </li>
-// );
-
 export default ExpenseListItem;
