@@ -113,7 +113,7 @@ exports[`should render ExpenseListFilters with alt data correctly 1`] = `
   <input
     onChange={[Function]}
     type="text"
-    value="Bill"
+    value="bills"
   />
   <select
     onChange={[Function]}

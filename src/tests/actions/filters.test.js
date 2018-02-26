@@ -1,7 +1,13 @@
 import moment from 'moment';
-import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } from '../../actions/filters';
+import {
+  setStartDate,
+  setEndDate,
+  setTextFilter,
+  sortByAmount,
+  sortByDate
+} from '../../actions/filters';
 
-test('Should generate set start date object action', () => {
+test('should generate set start date action object', () => {
   const action = setStartDate(moment(0));
   expect(action).toEqual({
     type: 'SET_START_DATE',
@@ -9,7 +15,7 @@ test('Should generate set start date object action', () => {
   });
 });
 
-test('Should generate set end date object action', () => {
+test('should generate set end date aciton object', () => {
   const action = setEndDate(moment(0));
   expect(action).toEqual({
     type: 'SET_END_DATE',
@@ -17,21 +23,16 @@ test('Should generate set end date object action', () => {
   });
 });
 
-test('Should generate set sort by date object action', () => {
-  const action = sortByDate();
+test('should generate set text filter object with text value', () => {
+  const text = 'Something in';
+  const action = setTextFilter(text);
   expect(action).toEqual({
-    type: 'SORT_BY_DATE'
+    type: 'SET_TEXT_FILTER',
+    text
   });
 });
 
-test('Should generate set sort by amount object action', () => {
-  const action = sortByAmount();
-  expect(action).toEqual({
-    type: 'SORT_BY_AMOUNT'
-  });
-});
-
-test('Should generate set text filter object with default value action', () => {
+test('should generate set text filter object with default', () => {
   const action = setTextFilter();
   expect(action).toEqual({
     type: 'SET_TEXT_FILTER',
@@ -39,12 +40,10 @@ test('Should generate set text filter object with default value action', () => {
   });
 });
 
-test('Should generate set text filter object with given value action', () => {
-  const action = setTextFilter('BILL');
-  expect(action).toEqual({
-    type: 'SET_TEXT_FILTER',
-    text: 'BILL'
-  });
+test('should generate action object for sort by date', () => {
+  expect(sortByDate()).toEqual({ type: 'SORT_BY_DATE' });
 });
 
-
+test('should generate action object for sort by amount', () => {
+  expect(sortByAmount()).toEqual({ type: 'SORT_BY_AMOUNT' });
+});
